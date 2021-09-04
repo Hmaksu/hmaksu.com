@@ -5,7 +5,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     color: #8AFFE7;
-    background: #435B56; background-opacity: 0.4;
+    background: rgba(91, 118, 113, 0.4);
 }
 
 #backgroundBody {
