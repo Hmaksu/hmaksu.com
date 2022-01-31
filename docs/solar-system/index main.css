@@ -103,5 +103,6 @@ body {
   }
 
   .effect:hover{
-      transform: scale(2);
+    z-index:104;
+    transform:  translateY( 50vmin ) scale(5);
   }
