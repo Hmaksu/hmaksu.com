@@ -36,7 +36,7 @@ html,body {
 
 /* Animación del mar. */
 #sea {
-  background:url(https://www.istanbulife.com/wp-content/uploads/2015/09/q4.jpg) repeat-x;
+  background:url(https://i.imgur.com/h75XWy8.png) repeat-x;
   animation: movebg 6s linear infinite;
   /* Posicionamos el mar, para que no solape al cielo */
   position:relative;
