@@ -1,0 +1,78 @@
+/* Eliminamos márgenes y ponemos fondo de página negro */
+html,body {
+    margin:0;
+    background:#000;
+  }
+
+  .gevgevgev {
+    visibility: hidden;
+  }
+  
+  /* Bernard Bernoulli: Animación del personaje */
+  #bern {
+    /* Tamaño de la viñeta individual */
+    width:275px;
+    height:400px;
+    /* Cómo hay establecido un tamaño, centramos con margin:auto */
+  
+    /* Cargamos el sprite (el repeat-x se puede omitir, por defecto se repite) */
+    background:url(https://raw.githubusercontent.com/Hmaksu/hmaksu.com/main/docs/at/at4.png) repeat-x;
+    /* Aplicamos la animación "walk": 0.8seg, 6 viñetas y repetimos infinitamente */
+    animation:walk 0.41s steps(7) infinite;
+    /* Posicionamos el personaje sobre el camino de madera */
+    position:relative;
+    bottom:1px;
+  }
+  
+  /* Animación de personaje caminando: Simplemente mueve el sprite sheet hacia la izquierda, realizando el movimiento. */
+  @keyframes walk {
+    /* Partimos de la primera viñeta del sprite sheet */
+    0% { background-position:0 }
+    /* El tamaño total de ancho del sprite. Es negativo para que no "camine" hacia atrás */
+    100% { background-position:-1892px }
+  }
+  
+  /* Animación del cielo. Efecto "Parallax", va más lento que el mar. */
+  #sky {
+    background:url(https://raw.githubusercontent.com/Hmaksu/hmaksu.com/main/docs/at/pastane.png) repeat-X;
+    animation: movebg 9s linear infinite;
+  }
+  
+  /* Animación del mar. */
+  #sea {
+    background:url(https://raw.githubusercontent.com/Hmaksu/hmaksu.com/main/docs/at/pastane.png) repeat-x;
+    animation: movebg 6s linear infinite;
+    /* Posicionamos el mar, para que no solape al cielo */
+    position:relative;
+    /* Pequeño degradado interior para suavizar el mar. Puede consumir muchos recursos */
+    box-shadow:10px 10px 45px RGBA(0,0,0, 0.85) inset;
+  }
+  
+  /* Animación para mover cielo y mar */
+  @keyframes movebg {
+    0% { background-position:1422px } 
+    100% { background-position:0 }
+  }
+  
+  /* OPCIONAL: Guybrush */
+  #gb {
+    width:104px;
+    height:150px;
+    background:url(https://raw.githubusercontent.com/Hmaksu/hmaksu.com/main/docs/busra/busra.png) no-repeat;
+    animation:gbwalk 1.2s steps(6) infinite;
+    position:relative;
+    top:1px;
+    /* Ojo, muy costoso en rendimiento */
+    /* filter:drop-shadow(5px 5px 5px #000); */
+  }
+  
+  @keyframes gbwalk {
+    0% { background-position:0 }
+    100% { background-position:-624px }
+  }
+  
+  .center {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
