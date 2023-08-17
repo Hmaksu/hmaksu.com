@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Başlıksız Belge</title>
+	
+	<style>
+	
+
+.split-image-container {
+  display: flex;
+	position: absolute;
+			z-index: 5;
+  transition: all 400ms ease;
+}
+		
+.split-image-container-active {  
+	visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 1s, opacity 1s linear;
+}
+
+.split-image-container .split-image {
+  width: 280px;
+	height: 315px;
+  background: url("https://i.ytimg.com/vi/52H-rKFV37U/maxresdefault.jpg");
+  background-size: cover;
+  transition: all 400ms ease;
+}
+
+.split-image-container .split-image:nth-child(2) {
+  background-position-x: 280px;
+}
+
+.split-image-container:hover .split-image:nth-child(1) {
+  margin: 0 0px;
+  transform: scale(1.00) rotateX(3deg) rotateY(-45deg);
+  box-shadow: 0 5px 40px -24px #00ffdd;
+}
+		
+		
+.split-image-container:hover .split-image:nth-child(2) {
+  margin: 0 0px;
+  transform: scale(1.0) rotateX(3deg) rotateY(45deg);
+  box-shadow: 0 5px 40px -24px #00ffdd;
+}
+		
+		.mainthing {
+	position: relative;
+		}
+		#youtube {
+	position: absolute;
+			z-index: -5;
+		}
+	</style>
+</head>
+
+<body>
+	
+	<div class="col-12 mainthing">
+	<div class="split-image-container" id="play-video">
+		
+      <span class="split-image"></span>
+		<span class="split-image"></span></div>
+		<div id="youtube">
+	<iframe width="560" height="315" id="video" src="https://www.youtube.com/embed/52H-rKFV37U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+	</div>
+		
+	<script>
+		
+document.getElementsByClassName("split-image-container")[0].addEventListener("click", clicked)
+		
+		
+function clicked() {
+		document.getElementById("video").src += "?&autoplay=1";
+	document.getElementsByClassName("split-image-container")[0].classList.add("split-image-container-active");
+
+}
+		
+	
+	</script>
+		
+		
+</body>
+</html>
