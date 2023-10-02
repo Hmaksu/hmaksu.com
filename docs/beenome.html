@@ -1,0 +1,112 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Başlıksız Belge</title>
+	<style>
+		 html,body{height:99%}
+		
+		}
+		
+		#flowchart{
+			height: 100%;
+			overflow: scroll;
+		}
+		
+		#flowchart::-webkit-scrollbar {
+			display: none !important
+		}
+
+
+	</style>
+	<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+<style>
+	
+.logo {
+  display: block;
+  width: 150px;
+  height: 150px;
+  background: url(strathclyde_logo.svg);
+  background-size: 150px 150px;
+}
+	</style>
+</head>
+
+<body>
+	<li class="logo"></li>
+	
+<ul>
+<li class='logo'></li>
+<li class='bx bxs-user'></li>
+<li class='bx bxl-facebook-square'></li>
+	<li><img height="20px" src="file:///C:/Users/aksum/Downloads/coaching.png"</li>
+	</ul>
+<div id="flowchart">
+	
+<div class="whitebox">	
+</div>
+	
+
+	
+<div id="svg-div">
+	
+<div class="scroll-follower">
+	</div>
+	<svg viewBox="0 0 600 2500">
+		
+		<g id="19" fill="none" fill-rule="evenodd">
+			<g id="box-0" class="box" transform="translate(295 0)" onclick="detailsClick(0)">
+				<rect id="rectangle-0" width="10px" height="100%" fill="#062a54" rx="4"></rect>
+			</g>
+			
+	
+			<g id="arrow-1" class="arrow" transform="translate(300 20)">
+				<path id="firstline" stroke="#062a54" stroke-linecap="round" stroke-width="5px" d="M0 0h50"></path>
+				<text id="box-text-0" fill="#062a54" font-family="Roboto-Regular, Roboto" font-size="16" letter-spacing="1">
+					<tspan style="font-weight: bold;" text-anchor="middle" x="90">2023</tspan>
+					<tspan style="font-weight: bold;" text-anchor="middle" x="90" dy="20">EELISA 2.0</tspan>
+				</text>
+			</g>
+			
+						
+			
+			<g id="arrow-1" class="arrow" transform="translate(300 80)">
+				<path id="line-1" stroke="#062a54" stroke-linecap="round" stroke-width="5px" d="M0 0h-50"></path>
+				<text id="box-text-0" fill="#062a54" font-family="Roboto-Regular, Roboto" font-size="16" letter-spacing="1">
+					<tspan style="font-weight: bold;" text-anchor="middle" x="-90">2023</tspan>
+					<tspan style="font-weight: bold;" text-anchor="middle" x="-90" dy="20">İstanbul Meeting</tspan>
+				</text>
+			</g>			
+			
+
+
+					<g id="scroll" class="scroll" transform="translate(294.5 0)" onclick="detailsClick(0)" style="cursor: pointer;">
+				<rect id="rectangle-0" width="10.5px" height="20px" fill="#a1b7d1" opacity="0.5" rx="4"></rect>
+			</g>
+		</g>
+	</svg>
+	</div>
+	</div>
+	
+	<script>
+	
+		
+		document.getElementById("flowchart").addEventListener("scroll", scrolling);
+			if (pageYOffset == 0){
+			var oran = ((document.getElementById("firstline").getBoundingClientRect().top-8)/20)-0.5
+			}
+		else{var oran=2};
+		function scrolling() {			
+
+			var scrolledposition = document.getElementById("flowchart").scrollTop/oran;
+			document.getElementById("scroll").transform.baseVal[0].setTranslate("294.5",scrolledposition);
+
+
+		}
+	
+	</script>
+	
+	 <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+
+</body>
+</html>
