@@ -1,0 +1,45 @@
+<html>
+<head>
+<style>
+  section {
+  position: relative;
+}
+
+section img {
+	position: absolute;
+}
+
+.top {
+	animation-name: fade;
+	animation-timing-function: ease-in-out;
+	animation-iteration-count: infinite;
+	animation-duration: 4s;
+	animation-direction: alternate;
+}
+
+@keyframes fade {
+	0% {
+		opacity: 1;
+	}
+	25% {
+		opacity: 1;
+	}
+	75% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+</style>
+  
+</head>
+
+  <body>
+<section>
+	<img class="bottom" src="doa.png">
+	<img class="top" src="batman.webp">
+</section>
+    
+  </body>
+</html>
