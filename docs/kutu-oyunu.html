@@ -1,6 +1,91 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Board Game Library</title>
+    <style>
+        body {
+            font-family: 'Garamond', serif;
+            background-color: #f5f0e1;
+            color: #5a3e2b;
+            text-align: center;
+            padding: 20px;
+        }
+        .search-container {
+            margin-bottom: 20px;
+        }
+        input[type="text"] {
+            width: 60%;
+            padding: 10px;
+            font-size: 18px;
+            border: 2px solid #8b5e3b;
+            background-color: #fff8e1;
+        }
+        .game-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .game-card {
+            background-color: #fff8e1;
+            border: 2px solid #8b5e3b;
+            padding: 10px;
+            width: 200px;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .game-card:hover {
+            transform: scale(1.05);
+        }
+        .game-card img {
+            width: 100%;
+            height: auto;
+            border-bottom: 2px solid #8b5e3b;
+        }
+    </style>
+</head>
+<body>
+    <h1>Board Game Library</h1>
+    <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Search for a game..." onkeyup="searchGames()">
+    </div>
+    <div class="game-container" id="gameContainer">
+        
+        <script>
+            const games = [
+                "7wonders", "Bang", "Carcassonne", "Cascadia", "CatanDenizciler", "Ciziver", "Direnis", "EjderAvcıları", "Entrika", "EpikBüyü1", "EpikBüyü2", "forsale", "gulyabani", "HarekatNormandiya", "IOTA", "JungleSpeed", "KayipDiyarlar", "KesifKuralKitabi", "KesifSeyirDefteri", "KeşifGezegen9İkiKitap", "KuzeyKasifleri", "LanetliAda", "machikoro", "Manifold", "munchkin", "MunchkinCthulhu", "MunchkinZombies", "otokrat", "Pandemic", "patika", "SmashUp", "Splendor", "spyfall", "SubTerra", "SucGunlukleri", "SushiGo", "TerraformingMars", "TMBaslangic", "Truva", "TTREurope", "UykucuKraliceler", "Wingspan", "Wyrmspan", "YamaliYorgan"
+            ];
 
-<meta http-equiv="Refresh" content="0; url='https://drive.google.com/drive/folders/1esqxZgaSpbRJDUmea5NZRtG7qQebgrqd?usp=drive_link'" />
+            const container = document.getElementById("gameContainer");
 
+            games.forEach(game => {
+                let div = document.createElement("div");
+                div.className = "game-card";
+                div.onclick = function() { window.location.href = `manuals/${game}.pdf`; };
+                div.innerHTML = `
+                    <img src="images/${game}.jpg" alt="${game}">
+                    <h3>${game}</h3>
+                `;
+                container.appendChild(div);
+            });
+
+            function searchGames() {
+                let input = document.getElementById('searchInput').value.toLowerCase();
+                let cards = document.getElementsByClassName('game-card');
+                
+                for (let i = 0; i < cards.length; i++) {
+                    let title = cards[i].getElementsByTagName('h3')[0].innerText.toLowerCase();
+                    if (title.includes(input)) {
+                        cards[i].style.display = "block";
+                    } else {
+                        cards[i].style.display = "none";
+                    }
+                }
+            }
+        </script>
+    </div>
+</body>
 </html>
