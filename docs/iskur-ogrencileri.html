@@ -224,6 +224,7 @@
               hours.forEach(hour => {
                 let busyCount = 0;
                 let busyUsers = [];
+                let freeUsers = [];
                 
                 teamData.forEach(user => {
                   if (selectedUsers.includes(user.id)) {
@@ -231,6 +232,8 @@
                     if (isBusy) {
                       busyCount++;
                       busyUsers.push(user.name.split(' ')[0]);
+                    } else {
+                      freeUsers.push(user.name.split(' ')[0]);
                     }
                   }
                 });
@@ -238,7 +241,8 @@
                 map[dayIdx][hour] = {
                   busyCount,
                   totalSelected: selectedUsers.length,
-                  busyUsers
+                  busyUsers,
+                  freeUsers
                 };
               });
             });
@@ -437,7 +441,7 @@
                             >
                               {data.busyCount > 0 && data.busyCount < data.totalSelected && (
                                 <div className="hidden group-hover:block absolute z-30 bg-slate-800 text-white text-xs p-2 rounded shadow-lg -top-8 left-1/2 -translate-x-1/2 whitespace-nowrap">
-                                  Meşgul: {data.busyUsers.join(', ')}
+                                  Müsait: {data.freeUsers.join(', ')}
                                 </div>
                               )}
                               
